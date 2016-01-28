@@ -248,7 +248,7 @@ public class WriteWarp10 implements CollectdWriteInterface,
  		con.setDoInput(true);
  		con.setRequestMethod("POST");
  		con.setRequestProperty("Host", this.className);
- 		con.setRequestProperty("X-CityzenData-Token", token);
+ 		con.setRequestProperty("X-Warp10-Token", token);
  		con.setRequestProperty("Content-Type", "application/gzip");
  		con.setChunkedStreamingMode(16384);
  		//OutputStream os = con.getOutputStream();

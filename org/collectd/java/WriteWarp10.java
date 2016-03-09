@@ -42,9 +42,9 @@ public class WriteWarp10 implements CollectdWriteInterface,
         CollectdConfigInterface,
         CollectdFlushInterface
 {
-    private String      url = "localhost";
-    private String      token   = "4242";
-    private String      className   = "";
+    private String      url = "http://localhost:4242";
+    private String      token   = "token";
+    private String      className   = "prefix";
     private StringBuffer sbuffer = new StringBuffer();
     private Number bufferSize = 100;
     private int counter = 0;
@@ -241,7 +241,12 @@ public class WriteWarp10 implements CollectdWriteInterface,
 
  		String url = this.url;
  		URL obj = new URL(url);
- 		HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+        HttpURLConnection con = null;
+ 		if(url.startsWith("https")) {
+            con = (HttpsURLConnection) obj.openConnection();
+        } else {
+            con = (HttpURLConnection) obj.openConnection();
+        }
        
  		//add request header
  		con.setDoOutput(true);

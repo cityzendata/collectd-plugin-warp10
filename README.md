@@ -3,7 +3,6 @@
 
 * Collectd writer plugin for Warp10.
 * First release
-* This plugin is inspired by the plugin to connect OpenTSDB and collectd : https://github.com/auxesis/collectd-opentsdb
 
 ### Standard - Install ###
   * Install collectd

@@ -1,7 +1,7 @@
 # README #
 ### collectd-warp10 ###
 
-* Collectd writer plugin for Warp10.
+* Collectd writer plugin for Warp 10.
 * First release
 
 ### Standard - Install ###
@@ -11,7 +11,7 @@
 ```
   * Clone the plugin repo
 ```
-  git clone git://github.com/aurrelhebert/collectd-warp10.git
+  git clone git://github.com/senx/collectd-plugin-warp10.git
 ```
   * Compile the plugin
 ```
@@ -29,15 +29,15 @@ Insert this into your `collectd.conf` (likely at `/etc/collectd/collectd.conf`):
 ```
   Timeout         120
 ```
-  * Configure JAVA plugin to push data on Warp10
+  * Configure JAVA plugin to push data to Warp 10
 
 ```
  LoadPlugin java
   <Plugin java>
-    JVMArg "-Djava.class.path=/usr/share/collectd-core/java/collectd-api.jar:/home/czd/tmp/collectd-writewarp10/"
+    JVMArg "-Djava.class.path=/usr/share/collectd-core/java/collectd-api.jar:/path/to/collectd-plugin-warp10/"
     LoadPlugin "org.collectd.java.WriteWarp10"
     <Plugin "WriteWarp10">
-      Server "https://warp.cityzendata.net/dist/api/v0/update" "hn.iXMFqrZSmQzg8y5Tv2lXsKf.N5ifkitno6L3tfVfGs_MABi_aobQfB7.Qx8z5e1UO_1enRJa0tuSoIp8Pq0QVG4tulOeSAYqwERw5FhEePZXTOnwFAVZZtpYTbeB8UjlBr7qjM5uJcM6WK_Kv7iTvQQChNiSMvQ5SNXvMfRN" "testing" 100
+      Server "https://HOST:PORT/api/v0/update" "TOKEN" "testing" 100
     </Plugin>
   </Plugin>
 ```
@@ -68,7 +68,7 @@ If issues detected with JAVA
 ```
   * Clone the plugin repo
 ```
-  git clone git://github.com/aurrelhebert/collectd-warp10.git
+  git clone git://github.com/senx/collectd-plugin-warp10.git
 ```
   * Compile the plugin
 
@@ -77,4 +77,4 @@ If issues detected with JAVA
   $JAVA_HOME/bin/javac -classpath /opt/collectd/share/collectd/java/collectd-api.jar org/collectd/java/WriteWarp10.java 
 ```
 ### Contacts ###
-* contact@cityzendata.com
+* contact@senx.io
